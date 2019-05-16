@@ -2,25 +2,25 @@
 
 ```php
 
-  use Fauna\Animal as Pi;
-	use Civilizacion\Persona;
-	
-	// Solo para cargar clases sin namespace
-	//function autoload($class){
-	//	include $class.".php";
-	//}
-	//
-	//spl_autoload_register('autoload');
+use Fauna\Animal as Pi;
+use Civilizacion\Persona;
 
-	// Solo para cargar clases con namespace
-	spl_autoload_register(function($class){
-		include str_replace("\\", "/", $class).'.php';
-	});
+// Solo para cargar clases sin namespace
+//function autoload($class){
+//	include $class.".php";
+//}
+//
+//spl_autoload_register('autoload');
 
-	$obj = new Pi();
-	$obj->msj("Cow");
+// Solo para cargar clases con namespace
+spl_autoload_register(function($class){
+	include str_replace("\\", "/", $class).'.php';
+});
 
-	$obj = new Persona();
-	$obj->msj("John Doe");
+$obj = new Pi();
+$obj->msj("Cow");
+
+$obj = new Persona();
+$obj->msj("John Doe");
   
  ```
